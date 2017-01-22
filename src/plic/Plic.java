@@ -21,6 +21,11 @@ public class Plic {
         try {
             AnalyseurSyntaxique analyseur = new AnalyseurSyntaxique(new AnalyseurLexical(new FileReader(fichier)));
             ArbreAbstrait arbre = (ArbreAbstrait) analyseur.parse().value;
+            OutputStream f = new FileOutputStream(fichier.substring(0, fichier.lastIndexOf('.'))+".mips");
+			BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(f));
+			bw.write(arbre.toMIPS());
+			bw.close();
+			f.close();
             System.err.println("expression stockée dans l'arbre : " + arbre);
             System.err.println("expression MIPS de l'arbre :\n\n" + arbre.toMIPS());
         } 
