@@ -12,4 +12,14 @@ public class ConstanteEntiere extends Constante {
         super(texte, n) ;
     }
 
+	@Override
+	public void verifier() {
+		// TODO Auto-generated method stub
+	}
+
+	@Override
+	public String toMIPS() {
+		return "li $v0, " + this.cste + "\n";
+	}
+
 }

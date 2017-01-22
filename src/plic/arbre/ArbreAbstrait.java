@@ -9,6 +9,7 @@ package plic.arbre;
 public abstract class ArbreAbstrait {
     
     // numéro de ligne du début de l'instruction
+	
     protected int noLigne ;
     
     protected ArbreAbstrait(int no) {
@@ -19,7 +20,7 @@ public abstract class ArbreAbstrait {
             return noLigne ;
     }
 
-    // public abstract void verifier() ;   à écrire pour plic0
-    // public abstract String toMIPS() ;   à écrire pour plic0
+    public abstract void verifier();
+    public abstract String toMIPS();
 
 }
